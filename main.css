@@ -1,0 +1,187 @@
+/* Global styles */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: #3b3b3b;
+  /* Disable scroll bounce on Safari */
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  /* Prevent adjustments of font size after orientation changes in iOS */
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 32px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: -1.3px;
+  text-align: center;
+}
+
+p {
+  margin: 16px 0 0;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  text-align: justify;
+}
+
+a {
+  font-size: 14px;
+  color: #cc0915;
+  text-decoration: none;
+  /* Remove the gray background on active links in IE 10 */
+  background-color: transparent;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  /* Remove the border on images inside links in IE 10 */
+  border-style: none;
+}
+
+main {
+  position: relative;
+  max-width: 1300px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Sections */
+
+.sections {
+  position: relative;
+  transition: transform 0.7s;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 16px 32px 16px 16px;
+}
+
+section > .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Misc */
+
+.logo {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  object-fit: contain;
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  object-fit: contain;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 50%;
+  right: 5px;
+
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  margin: 5px;
+
+  border: solid 1px #cacaca;
+  border-radius: 50%;
+
+  transition: background-color 0.3s;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dot.active {
+  background-color: #cacaca;
+}
+
+/* Media queries */
+
+@media only screen and (min-width: 1024px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  p {
+    margin: 24px 0 0;
+    font-size: 16px;
+    line-height: 2;
+  }
+
+  a {
+    font-size: 16px;
+  }
+
+  section {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  section > .image {
+    flex: 0 1 670px;
+    margin-right: 100px;
+  }
+
+  section > .content {
+    flex: 0 1 420px;
+    margin-right: 100px;
+  }
+
+  section:nth-child(odd) > .image { order: 1; }
+  section:nth-child(odd) > .content { order: 2; }
+
+  section:nth-child(even) > .image { order: 2; }
+  section:nth-child(even) > .content { order: 1; }
+
+  .pagination {
+    right: 10px;
+  }
+
+  .logo {
+    max-width: 355px;
+  }
+
+  .photo {
+    max-width: 670px;
+  }
+}
